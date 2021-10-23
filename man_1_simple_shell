@@ -1,0 +1,80 @@
+.TH man 1 "23 OCT 2021" "hsh comman manual"
+
+.SH NAME 
+
+.B simple_shell - hsh
+.a command line shell
+
+.SH SYNOPSIS
+
+.B ./hsh
+
+
+.SH DESCRIPTION
+
+The (hsh) simple_shell is a command line shell which is designed as of the tradition Unix shell written by Ken Thompson. This shell conatains the basic functionality of the tradition Unix shell and is designed to to run on the linux environment.
+
+.SH INVOCATION
+
+Compile simple_shell with GNU compiler collecton, preferably using gcc in addition of the below specified flags,
+.I as per this example (note that the * wildcard enables all .c files to be compiled):
+.p
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.p
+.RS
+.B $ ./hsh
+.p
+.RE
+simple_shell can be run in non-interactive mode by the use of shell scripts. Here the use of piping ('|') is involed
+.p
+.RS
+.B echo 'ls -la' | ./hsh
+
+
+.SH EXECUTABLES
+.p
+.B EXAMPLE OF EXECUTABLES
+.Ip
+.br
+.\&
+.RS
+\&$ echo "This is an example of executable"
+.br
+\&"This is an example of executable"
+.br
+\&$
+
+.SH BUILDINS
+
+simple_shell has some buildins functions as below.
+.IT
+.B env
+- prints the environment variables
+
+.B setenv
+- sets the environment
+
+.B unsetenv
+- removes elements from the environment
+
+.B exit
+-exits the program
+
+
+
+.SH BUGS
+No known bugs at this time.
+
+.SH NOTE
+Incase of any bug, please report to the authors
+
+.SH AUTHORS
+
+Moses Oyet David - trickmaxillar@gmail.com
+
+Waython Yesse - 
+
+.SH SEE ALSO
+
+sh
