@@ -1,4 +1,12 @@
+/*
+ * Project: simple_shell
+ * File: errors.c
+ * Auth: Waython Yesse
+ *     : Moses Oyet
+ */
+
 #include "shell.h"
+
 /**
 * print_error - prints error messages to standard error
 * @vars: pointer to struct of variables
@@ -6,6 +14,7 @@
 *
 * Return: void
 */
+
 void print_error(vars_t *vars, char *msg)
 {
 char *count;
@@ -23,12 +32,14 @@ _puts2(msg);
 else
 perror("");
 }
+
 /**
 * _puts2 - prints a string to standard error
 * @str: string to print
 *
 * Return: void
 */
+
 void _puts2(char *str)
 {
 ssize_t num, len;
@@ -40,12 +51,14 @@ perror("Fatal Error");
 exit(1);
 }
 }
+
 /**
 * _uitoa - converts an unsigned int to a string
 * @count: unsigned int to convert
 *
 * Return: pointer to the converted string
 */
+
 char *_uitoa(unsigned int count)
 {
 char *numstr;

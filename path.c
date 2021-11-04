@@ -1,4 +1,12 @@
+/*
+ * Project: simple_shell
+ * File: path.c
+ * Auth: Waython Yesse
+ *     : Moses Oyet
+ */
+
 #include "shell.h"
+
 /**
 * path_execute - executes a command in the path
 * @command: full path to the command
@@ -6,6 +14,7 @@
 *
 * Return: 0 on succcess, 1 on failure
 */
+
 int path_execute(char *command, vars_t *vars)
 {
 pid_t child_pid;
@@ -38,12 +47,14 @@ vars->status = 126;
 }
 return (0);
 }
+
 /**
 * find_path - finds the PATH variable
 * @env: array of environment variables
 *
 * Return: pointer to the node that contains the PATH, or NULL on failure
 */
+
 char *find_path(char **env)
 {
 char *path = "PATH=";
@@ -58,12 +69,14 @@ break;
 }
 return (env[i]);
 }
+
 /**
 * check_for_path - checks if the command is in the PATH
 * @vars: variables
 *
 * Return: void
 */
+
 void check_for_path(vars_t *vars)
 {
 char *path, *path_dup = NULL, *check = NULL;
@@ -106,12 +119,14 @@ free(path_tokens);
 if (r == 1)
 new_exit(vars);
 }
+
 /**
 * execute_cwd - executes the command in the current working directory
 * @vars: pointer to struct of variables
 *
 * Return: 0 on success, 1 on failure
 */
+
 int execute_cwd(vars_t *vars)
 {
 pid_t child_pid;
@@ -151,12 +166,14 @@ print_error(vars, ": not found\n");
 vars->status = 127;
 return (0);
 }
+
 /** 
 * check_for_dir - checks if the command is a part of a path
 * @str: command
 *
 * Return: 1 on success, 0 on failure
 */
+
 int check_for_dir(char *str)
 {
 unsigned int i;

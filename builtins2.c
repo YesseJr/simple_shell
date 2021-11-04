@@ -1,10 +1,19 @@
+/*
+ * Project: simple_shell
+ * File: builtins2.c
+ * Auth: Waython Yesse
+ *     : Moses Oyet
+ */
+
 #include "shell.h"
+
 /**
 * add_key - create a new environment variable
 * @vars: pointer to struct of variables
 *
 * Return: void
 */
+
 void add_key(vars_t *vars)
 {
 unsigned int i;
@@ -35,6 +44,7 @@ newenv[i + 1] = NULL;
 free(vars->env);
 vars->env = newenv;
 }
+
 /**
 * find_key - finds an environment variable
 * @env: array of environment variables
@@ -42,6 +52,7 @@ vars->env = newenv;
 *
 * Return: pointer to address of the environment variable
 */
+
 char **find_key(char **env, char *key)
 {
 unsigned int i, j, len;
@@ -56,6 +67,7 @@ return (&env[i]);
 }
 return (NULL);
 }
+
 /**
 * add_value - create a new environment variable string
 * @key: variable name
@@ -63,6 +75,7 @@ return (NULL);
 *
 * Return: pointer to the new string;
 */
+
 char *add_value(char *key, char *value)
 {
 unsigned int len1, len2, i, j;
@@ -80,11 +93,13 @@ new[i + 1 + j] = value[j];
 new[i + 1 + j] = '\0';
 return (new);
 }
+
 /**
 * _atoi - converts a string into an integer
 * @str: string to convert
 * Return: the integer value, or -1 if an error occurs
 */
+
 int _atoi(char *str)
 {
 unsigned int i, digits;
