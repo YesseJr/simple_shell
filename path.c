@@ -167,7 +167,7 @@ vars->status = 127;
 return (0);
 }
 
-/** 
+/**
 * check_for_dir - checks if the command is a part of a path
 * @str: command
 *
