@@ -1,9 +1,18 @@
+/*
+ * Project: simple_shell
+ * File: builtins.c
+ * Auth: Waython Yesse
+ *     : Moses Oyet
+ */
+
 #include "shell.h"
+
 /**
 * check_for_builtins - checks if the command is a builtin
 * @vars: variables
 * Return: pointer to the function or NULL
 */
+
 void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 {
 unsigned int i;
@@ -23,11 +32,13 @@ if (check[i].f != NULL)
 check[i].f(vars);
 return (check[i].f);
 }
+
 /**
 * new_exit - exit program
 * @vars: variables
 * Return: void
 */
+
 void new_exit(vars_t *vars)
 {
 int status;
@@ -67,12 +78,14 @@ _puts("\n");
 }
 vars->status = 0;
 }
+
 /**
 * new_setenv - create a new environment variable, or edit an existing variable
 * @vars: pointer to struct of variables
 *
 * Return: void
 */
+
 void new_setenv(vars_t *vars)
 {
 char **key;
@@ -103,11 +116,13 @@ free(*key);
 }
 vars->status = 0;
 }
+
 /**
 * new_unsetenv - remove an environment variable
 * @vars: pointer to a struct of variables
 * Return: void
 */
+
 void new_unsetenv(vars_t *vars)
 {
 char **key, **newenv;
